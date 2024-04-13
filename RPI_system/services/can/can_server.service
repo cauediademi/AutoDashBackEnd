@@ -2,7 +2,7 @@
 After=network.target
 
 [Service]
-WorkingDirectory=/home/pi/AutoDashBackEnd/
+WorkingDirectory=/~/AutoDashBackEnd/
 # Run's npm node script (Web Server and the CAN Server)
 ExecStart=yarn run can_server
 Restart=on-failure
@@ -13,8 +13,8 @@ Environment=NODE_ENV=production
 Environment=CHANNEL=can0
 StandardOutput=syslog
 StandardError=syslog
-User=pi
-Group=pi
+User=ghoul
+Group=ghoul
 
 [Install]
 WantedBy=multi-user.target
