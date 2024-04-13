@@ -158,7 +158,7 @@ chromium-browser --noerrdialogs --ignore-gpu-blocklist --enable-accelerated-vide
 
 #### AutoStart Chromium 
 Add this when/if you want chromium to start upon boot
-1. `sudo nano /~/.bash_profile`
+1. `sudo nano ~/.bash_profile`
 2. Add this: 
    1. `[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx -- -nocursor`
 
@@ -315,9 +315,9 @@ Monitoring
 
 
 # Personal Notes:
-* making quick src updates: `scp -r ../AutoDashBackEnd/src pi@pi.local:/~/AutoDashBackEnd/src` 
+* making quick src updates: `scp -r ../AutoDashBackEnd/src pi@pi.local:~/AutoDashBackEnd/src` 
 * copy dist 
-  *  `scp -r ../AutoDashFrontEnd/dist pi@pi.local:/~/AutoDashBackEnd/dist/ `
+  *  `scp -r ../AutoDashFrontEnd/dist pi@pi.local:~/AutoDashBackEnd/dist/ `
 ```
 ~ cd development/AutoDashBackEnd                                       
 ➜  AutoDashBackEnd git:(main) ✗ canplayer vcan0=can0  -I ./can_dumps/candump-racepack-running.log -li

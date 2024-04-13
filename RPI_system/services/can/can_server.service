@@ -2,7 +2,7 @@
 After=network.target
 
 [Service]
-WorkingDirectory=/~/AutoDashBackEnd/
+WorkingDirectory=~/AutoDashBackEnd/
 # Run's npm node script (Web Server and the CAN Server)
 ExecStart=yarn run can_server
 Restart=on-failure

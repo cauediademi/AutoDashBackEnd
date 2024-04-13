@@ -173,13 +173,13 @@ sed -i 's/"exited_cleanly":false/"exited_cleanly":true/; s/"exit_type":"[^"]\+"/
 # IF THE WEBGL DISPLAY IS FLIPPED: use this line (from here https://forums.raspberrypi.com/viewtopic.php?f=91&t=274315 )
 #MESA_EXTENSION_OVERRIDE=-GL_MESA_framebuffer_flip_y chromium-browser --noerrdialogs --disable-infobars --disable-full-history-sync \
 
-chromium-browser --window-position=0,0 --user-data-dir="/~/Documents/Profiles/0" --noerrdialogs --disable-infobars --disable-full-history-sync \
+chromium-browser --window-position=0,0 --user-data-dir="~/Documents/Profiles/0" --noerrdialogs --disable-infobars --disable-full-history-sync \
 --kiosk http:\\localhost:3000 
 ```
 
 #### AutoStart Chromium 
 Add this when/if you want chromium to start upon boot
-1. `sudo nano /~/.bash_profile`
+1. `sudo nano ~/.bash_profile`
 2. Add this: 
    1. `[[ -z $DISPLAY && $XDG_VTNR -eq 1 ]] && startx -- -nocursor`
 3. Reboot 
@@ -324,9 +324,9 @@ Monitoring
 * Measure Temperature -     `watch -n1 vcgencmd measure_temp`
 
 # Personal Scratch Board/Notes:
-* making quick src updates: `scp -r ../AutoDashBackEnd/src pi@pi.local:/~/AutoDashBackEnd/src` 
+* making quick src updates: `scp -r ../AutoDashBackEnd/src pi@pi.local:~/AutoDashBackEnd/src` 
 * copy dist 
-  *  `scp -r ../AutoDashFrontEnd/dist pi@pi.local:/~/AutoDashBackEnd/dist/ `
+  *  `scp -r ../AutoDashFrontEnd/dist pi@pi.local:~/AutoDashBackEnd/dist/ `
 ```
 ~ cd development/AutoDashBackEnd                                       
 ➜  AutoDashBackEnd git:(main) ✗ canplayer vcan0=can0  -I ./can_dumps/candump-racepack-running.log -li
@@ -336,8 +336,8 @@ To run device related commands via SSH:
 `DISPLAY=:0 <command like xandr or wmctrl>`
 * two separate windows
 ```
-chromium-browser --window-position=0,0 --user-data-dir="/~/Documents/Profiles/0" --noerrdialogs --disable-infobars --disable-full-history-sync  --kiosk http:\\localhost:3000 --enable-features=CanvasOop>
-51 chromium-browser --window-position=0,400 --user-data-dir="/~/Documents/Profiles/1" --noerrdialogs --disable-infobars --disable-full-history-sync  --kiosk http:\\localhost:3000 --enable-features=CanvasO>
+chromium-browser --window-position=0,0 --user-data-dir="~/Documents/Profiles/0" --noerrdialogs --disable-infobars --disable-full-history-sync  --kiosk http:\\localhost:3000 --enable-features=CanvasOop>
+51 chromium-browser --window-position=0,400 --user-data-dir="~/Documents/Profiles/1" --noerrdialogs --disable-infobars --disable-full-history-sync  --kiosk http:\\localhost:3000 --enable-features=CanvasO>
 52 
 #dtoverlay=gpio-shutdown
 #dtoverlay=gpio-shutdown,debounce=5000
